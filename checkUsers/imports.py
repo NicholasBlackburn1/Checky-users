@@ -19,4 +19,7 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import getpass
-import os 
+import sys, os
+import win32com.shell.shell as shell
+
+import ctypes

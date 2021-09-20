@@ -1,8 +1,11 @@
 """
 this class is where allthe code is executed when ran 
+
+TODO: get linux version running to 
 """
 
 
+from shellControl import shellControl
 import imports 
 import ColorLog
 
@@ -23,8 +26,15 @@ def Main():
         if(not username):
             ColorLog.Error("Cannot run without user being Active")
         
-        else:
+        if(username and imports.ctypes.windll.shell32.IsUserAnAdmin()):
             ColorLog.Warning("got Active user time to run stuff")
+
+            # this forces windows to update
+
+
+
+            # this downloads and installs winget
+            shellControl.installWinget(shellControl())
         
 
        # Runs on Linux platform
