@@ -47,6 +47,7 @@ def Main():
 
             # this will install Adobe chrome
             shellControl.installAdobeArobat(shellControl())
+            
        # Runs on Linux platform
     if(imports.platform.system()== 'Linux'):  
         username = imports.os.getlogin()
