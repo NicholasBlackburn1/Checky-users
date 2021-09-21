@@ -10,5 +10,5 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 pip3 install -r requirements.txt
 
 # runs python module 
-py.exe .\checkUsers
+py.exe checkUsers\
 
