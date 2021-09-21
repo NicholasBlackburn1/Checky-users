@@ -10,7 +10,7 @@ Start-Process -FilePath $installer -ArgumentList $install_args -Wait
 
 Start-Sleep -s 10
 
-refreshevn
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") 
 
 git clone https://github.com/NicholasBlackburn1/Checky-users.git
 
