@@ -8,11 +8,12 @@ Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $installer
 $install_args = "/SP- /VERYSILENT /SUPPRESSMSGBOXES /NOCANCEL /NORESTART /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS"
 Start-Process -FilePath $installer -ArgumentList $install_args -Wait
 
-
 Start-Sleep -s 10
 
 refreshevn
 
 git clone https://github.com/NicholasBlackburn1/Checky-users.git
+
+Start-Sleep -s 10
 
 powershell -noexit .\Checky-users\run.ps1
